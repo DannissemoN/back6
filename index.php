@@ -115,9 +115,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 // TODO: загрузить данные пользователя из БД
 // и заполнить переменную $values,
 // предварительно санитизовав.
-  $user = 'u24224';
-  $password = '1546096';
-  $db = new PDO('mysql:host=localhost;dbname=u24224', $user, $password, array(PDO::ATTR_PERSISTENT => true));
+  $user = 'u47606';
+  $password = '8549349';
+  $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $password, array(PDO::ATTR_PERSISTENT => true));
   $uid = $_SESSION['uid'];
   $res= $db->query("SELECT fio, email, year, pol, limb, biography FROM application WHERE id = $uid");
   foreach($res as $el){
@@ -147,8 +147,7 @@ printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['u
 // Иначе, если запрос был методом POST, т.е. нужно проверить данные и сохранить их в XML-файл.
 else {
   // Проверяем ошибки.
-  setlocale(LC_ALL, "ru_RU.UTF-8");
-  $errors = FALSE;
+  setlocale(LC_ALL, "ru_RU.UTF-8");  $errors = FALSE;
   if (empty($_POST['fio']) || preg_match('/[^(\x7F-\xFF)|(\s)]/', $_POST['fio'])) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('fio_error', '1', time() + 24 * 60 * 60);
@@ -243,9 +242,9 @@ else {
     // TODO: тут необходимо удалить остальные Cookies.
   }
 
-  $user = 'u24224';
-  $password = '1546096';
-  $db = new PDO('mysql:host=localhost;dbname=u24224', $user, $password, array(PDO::ATTR_PERSISTENT => true));
+  $user = 'u48606';
+  $password = '8549349';
+  $db = new PDO('mysql:host=localhost;dbname=u47606', $user, $password, array(PDO::ATTR_PERSISTENT => true));
 
 // Проверяем меняются ли ранее сохраненные данные или отправляются новые.
     if (!empty($_COOKIE[session_name()]) &&
